@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scr\source-files\clients\client-managemant.cpp" />
+    <ClCompile Include="scr\source-files\clients\client-operations.cpp" />
+    <ClCompile Include="scr\source-files\clients\client-validation.cpp" />
     <ClCompile Include="scr\source-files\core\core.cpp" />
     <ClCompile Include="scr\source-files\file-handler\data-conversion.cpp" />
     <ClCompile Include="scr\source-files\file-handler\file-operation.cpp" />
