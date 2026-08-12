@@ -15,3 +15,10 @@ void ShowClientsListScreen(std::vector <stClientData>& vClients)
 	}
 	std::cout << "\n------------------------------------------------------------------------------------------------------------------------\n";
 }
+
+void ShowAddNewClientScreen(std::vector <stClientData>& vClients)
+{
+	ResetScreen();
+	PrintHeaderAddNewClientScreen();
+
+}

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 #include "../../header-files/helpers/helpers.h"
 
 bool isNumberInRange(int number, int from, int to)
@@ -38,6 +39,15 @@ std::string GetWordForm(const std::size_t& number)
 
 void PressAnyKey()
 {
-	std::cout << "Press any key to go back to main mnue...";
+	std::cout << std::left << std::setw(33) << "" << "Press any key to go back to main mnue...";
 	system("pause > 0");
+}
+
+std::string ReadAccountNumber()
+{
+	std::string accNumber;
+	std::cout << std::left << std::setw(33) << "Account Number: ";
+	std::getline(std::cin, accNumber);
+
+	return accNumber;
 }

@@ -18,6 +18,15 @@ void PrintHeaderShowClientsListScreen(const std::size_t& NumberOfClients)
 	std::cout << "\n------------------------------------------------------------------------------------------------------------------------\n";
 }
 
+void PrintHeaderAddNewClientScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 78, "* * *  ADD NEW CLIENT SCREEN  * * *\n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	std::cout << std::left << std::setw(33) << "" << "Adding new client:\n";
+}
+
 void PrintClientCard(const stClientData& client)
 {
 	std::cout << "|" << std::left << std::setw(20) << client.accNumber;

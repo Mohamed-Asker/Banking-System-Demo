@@ -10,3 +10,5 @@ void ResetScreen();
 std::string GetWordForm(const std::size_t& number);
 
 void PressAnyKey();
+
+std::string ReadAccountNumber();
