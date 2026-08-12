@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scr\source-files\core\core.cpp" />
+    <ClCompile Include="scr\source-files\file-handler\file-operation.cpp" />
     <ClCompile Include="scr\source-files\helpers\helpers.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\header-files\core\core.h" />
+    <ClInclude Include="scr\header-files\file-handler\file-handler.h" />
     <ClInclude Include="scr\header-files\helpers\helpers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
