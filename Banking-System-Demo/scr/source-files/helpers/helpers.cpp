@@ -30,3 +30,14 @@ void ResetScreen()
 {
 	system("cls");
 }
+
+std::string GetWordForm(const std::size_t& number)
+{
+	return (number <= 1) ? ") client" : ") clients";
+}
+
+void PressAnyKey()
+{
+	std::cout << "Press any key to go back to main mnue...";
+	system("pause > 0");
+}

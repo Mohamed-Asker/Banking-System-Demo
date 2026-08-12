@@ -19,7 +19,10 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 
 		switch (option)
 		{
-			//case enMainMnueScreenOptions::ShowClientList:
+		case enMainMnueOptions::ShowClientsList:
+			ShowClientsListScreen(vClients);
+			PressAnyKey();
+			break;
 
 		}
 
@@ -28,6 +31,5 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 
 int main()
 {
-	ManageClient("FileName", "//");
-	return 0;
+	ManageClient("D:/My-items/work/Clinets.txt", "#//#");
 }
