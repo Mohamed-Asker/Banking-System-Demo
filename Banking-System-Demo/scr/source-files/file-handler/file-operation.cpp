@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include "../../header-files/file-handler/file-handler.h"
 #include "../../header-files/core/core.h"
 
 
@@ -18,7 +19,10 @@ std::vector <stClientData> LoadDataFromFileToVector(const std::string& FileName,
 
 		while (std::getline(file, DataLine))
 		{
-
+			client = ConvertClientDataLineToRecord(DataLine, delimiter);
+			vClients.push_back(client);
 		}
+		file.close();
 	}
+	return vClients;
 }
