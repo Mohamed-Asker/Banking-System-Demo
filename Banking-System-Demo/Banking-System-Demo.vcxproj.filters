@@ -40,6 +40,12 @@
     <Filter Include="Source Files\scr/\file-handler/">
       <UniqueIdentifier>{8198b57f-08b3-4e42-b06c-f2d371c1cc7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\scr/\clients/">
+      <UniqueIdentifier>{d3d67afe-cf7a-4f9e-b668-248c56251601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scr/\clients/">
+      <UniqueIdentifier>{825150f6-0b78-4b3c-a9f5-3af549134478}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -65,6 +71,9 @@
     <ClCompile Include="scr\source-files\file-handler\file-operation.cpp">
       <Filter>Source Files\scr/\file-handler/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\source-files\clients\client-managemant.cpp">
+      <Filter>Source Files\scr/\clients/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\header-files\core\core.h">
@@ -75,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="scr\header-files\file-handler\file-handler.h">
       <Filter>Header Files\scr/\file-handler/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\header-files\clients\clients.h">
+      <Filter>Header Files\scr/\clients/</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
