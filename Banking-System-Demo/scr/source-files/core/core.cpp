@@ -7,7 +7,7 @@ void PrintHeaderMainMnue()
 {
 	std::cout << "\n\n";
 	printf("%*s", 87, "-----------------------------------------------------\n");
-	printf("%*s", 76, "* * *  MAIN MNUE SCREEN * * * \n");
+	printf("%*s", 76, "* * *  MAIN MNUE SCREEN  * * * \n");
 	printf("%*s", 87, "-----------------------------------------------------\n");
 }
 
