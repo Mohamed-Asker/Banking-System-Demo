@@ -28,6 +28,12 @@
     <Filter Include="Header Files\scr/\core/">
       <UniqueIdentifier>{5fb93e28-81dc-4697-853d-cbb6c6c31d4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\scr/\helpers/">
+      <UniqueIdentifier>{c90cd874-621a-4f6f-9dda-aa699f54f584}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scr/\helpers/">
+      <UniqueIdentifier>{3f3ef143-1954-4a58-8144-8ee1b54c79aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -44,10 +50,16 @@
     <ClCompile Include="scr\source-files\core\core.cpp">
       <Filter>Source Files\scr/\core/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\source-files\helpers\helpers.cpp">
+      <Filter>Source Files\scr/\helpers/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\header-files\core\core.h">
       <Filter>Header Files\scr/\core/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\header-files\helpers\helpers.h">
+      <Filter>Header Files\scr/\helpers/</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
