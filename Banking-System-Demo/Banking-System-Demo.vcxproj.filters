@@ -13,10 +13,41 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\project/">
+      <UniqueIdentifier>{a1d8f09a-192f-457b-95a8-d457d6c02c27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scr/">
+      <UniqueIdentifier>{f86237b3-1874-45f7-beb5-6bc1b6d023d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scr/\core/">
+      <UniqueIdentifier>{70cc8a7b-4f6a-430b-80c9-3cbbf8dee1d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scr/">
+      <UniqueIdentifier>{646c368f-9415-47cd-b245-840d1be4ff2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scr/\core/">
+      <UniqueIdentifier>{5fb93e28-81dc-4697-853d-cbb6c6c31d4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Banking-System-Demo.cpp">
-      <Filter>Source Files</Filter>
+    <None Include="..\.gitignore">
+      <Filter>Source Files\project/</Filter>
+    </None>
+    <None Include="..\reamdme.md">
+      <Filter>Source Files\project/</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\scr/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\source-files\core\core.cpp">
+      <Filter>Source Files\scr/\core/</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scr\header-files\core\core.h">
+      <Filter>Header Files\scr/\core/</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
