@@ -80,6 +80,9 @@
     <ClCompile Include="scr\source-files\clients\client-validation.cpp">
       <Filter>Source Files\scr/\clients/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\source-files\clients\client-ui.cpp">
+      <Filter>Source Files\scr/\clients/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\header-files\core\core.h">
