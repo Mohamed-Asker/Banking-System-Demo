@@ -34,6 +34,12 @@
     <Filter Include="Source Files\scr/\helpers/">
       <UniqueIdentifier>{3f3ef143-1954-4a58-8144-8ee1b54c79aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\scr/\file-handler/">
+      <UniqueIdentifier>{d2e8eed8-d56f-4b5c-ae47-bb86541b4c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scr/\file-handler/">
+      <UniqueIdentifier>{8198b57f-08b3-4e42-b06c-f2d371c1cc7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -53,6 +59,12 @@
     <ClCompile Include="scr\source-files\helpers\helpers.cpp">
       <Filter>Source Files\scr/\helpers/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\source-files\file-handler\data-conversion.cpp">
+      <Filter>Source Files\scr/\file-handler/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\source-files\file-handler\file-operation.cpp">
+      <Filter>Source Files\scr/\file-handler/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\header-files\core\core.h">
@@ -60,6 +72,9 @@
     </ClInclude>
     <ClInclude Include="scr\header-files\helpers\helpers.h">
       <Filter>Header Files\scr/\helpers/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\header-files\file-handler\file-handler.h">
+      <Filter>Header Files\scr/\file-handler/</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
