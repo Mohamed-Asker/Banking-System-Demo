@@ -25,3 +25,8 @@ int ReadNumberInRange(const std::string& msg, int from, int to, int width)
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	return number;
 }
+
+void ResetScreen()
+{
+	system("cls");
+}
