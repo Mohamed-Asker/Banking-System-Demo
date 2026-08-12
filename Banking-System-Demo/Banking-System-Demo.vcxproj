@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scr\source-files\core\core.cpp" />
+    <ClCompile Include="scr\source-files\file-handler\data-conversion.cpp" />
     <ClCompile Include="scr\source-files\file-handler\file-operation.cpp" />
     <ClCompile Include="scr\source-files\helpers\helpers.cpp" />
   </ItemGroup>
