@@ -24,7 +24,7 @@ void PrintHeaderAddNewClientScreen()
 	printf("%*s", 87, "-----------------------------------------------------\n");
 	printf("%*s", 78, "* * *  ADD NEW CLIENT SCREEN  * * *\n");
 	printf("%*s", 87, "-----------------------------------------------------\n");
-	std::cout << std::left << std::setw(33) << "" << "Adding new client:\n";
+	std::cout << std::left << std::setw(width) << "" << "Adding new client:\n";
 }
 
 void PrintClientCard(const stClientData& client)
@@ -34,4 +34,25 @@ void PrintClientCard(const stClientData& client)
 	std::cout << "|" << std::left << std::setw(40) << client.name;
 	std::cout << "|" << std::left << std::setw(19) << client.phone;
 	std::cout << "|" << std::left << std::setw(20) << client.accBalance << "|";
+}
+
+void PrintHeaderDeleteClientScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 77, "* * *  DELETE CLIENT SCREEN  * * *\n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	std::cout << std::left << std::setw(width) << "" << "Deleteing client:\n";
+}
+
+void ShowClientDetails(const stClientData& client)
+{
+	std::cout << "\n" << std::left << std::setw(width) << "" << "The following are the clients detalis:";
+	std::cout << "\n" << std::left << std::setw(width) << "" << "--------------------------------------";
+	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Account Number" << ": " << client.accNumber;
+	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Pin Code" << ": " << client.PinCode;
+	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Client Name" << ": " << client.name;
+	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Client Phone" << ": " << client.phone;
+	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Account Balance" << ": " << client.accBalance;
+	std::cout << "\n" << std::left << std::setw(width) << "" << "--------------------------------------";
 }

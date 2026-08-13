@@ -16,3 +16,11 @@ void ShowAddNewClientScreen(std::vector <stClientData>& vClients, const std::str
 bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber, stClientData* ptrClient = nullptr);
 
 stClientData ReadNewClient(std::vector <stClientData>& vClients);
+
+void ShowDeleteClientScreen(std::vector <stClientData>& vClients, const std::string& FileNam, const std::string& delimiter);
+
+void PrintHeaderDeleteClientScreen();
+
+void ShowClientDetails(const stClientData& client);
+
+bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber);

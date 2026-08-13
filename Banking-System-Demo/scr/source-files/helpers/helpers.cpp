@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include "../../header-files/helpers/helpers.h"
+#include "../../header-files/core/core.h"
 
 bool isNumberInRange(int number, int from, int to)
 {
@@ -46,7 +47,7 @@ void PressAnyKey(int width)
 std::string ReadAccountNumber()
 {
 	std::string accNumber;
-	std::cout << std::left << std::setw(33) << "Account Number: ";
+	std::cout << std::left << std::setw(width) << "" << "Account Number: ";
 	std::getline(std::cin, accNumber);
 
 	return accNumber;

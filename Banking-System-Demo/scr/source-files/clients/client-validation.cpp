@@ -53,3 +53,18 @@ stClientData ReadNewClient(std::vector <stClientData>& vClients)
 
 	return client;
 }
+
+bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber)
+{
+	stClientData client;
+
+	if (FindClientByAccountNumber(vClients, accNumber, &client))
+	{
+
+	}
+	else
+	{
+		std::cout << "\n" << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not found.\n";
+		return false;
+	}
+}
