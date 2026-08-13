@@ -4,7 +4,7 @@
 void PrintMainMnueScreen();
 
 const int width = 33;
-const std::string ClientsFileName = "../../../../docs/files/ClientsData.txt";
+const std::string ClientsFileName = "D:/MA-DevVault/Projects/Banking-System/Banking-System-Demo/docs/files/ClientsData.txt";
 const std::string delimiter = "#//#";
 
 struct stClientData

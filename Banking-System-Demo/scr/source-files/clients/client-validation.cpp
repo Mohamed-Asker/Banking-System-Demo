@@ -84,7 +84,7 @@ bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std
 		if (std::tolower(answer) == 'y')
 		{
 			MarkClientForDelete(vClients, accNumber);
-			SaveDataToFile(vClients, ClientsFileName, delimiter);
+			SaveDataToFile(vClients);
 			vClients = LoadDataFromFileToVector();
 			std::cout << "\nClient deleted successfully.\n";
 			return true;

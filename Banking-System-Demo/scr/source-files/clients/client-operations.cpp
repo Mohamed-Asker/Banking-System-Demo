@@ -23,7 +23,7 @@ void ShowAddNewClientScreen(std::vector <stClientData>& vClients, const std::str
 	ResetScreen();
 	PrintHeaderAddNewClientScreen();
 	vClients.push_back(ReadNewClient(vClients));
-	SaveDataToFile(vClients, FileName, delimiter);
+	SaveDataToFile(vClients);
 	std::cout << "\n" << std::left << std::setw(width) << "" << "Client added successfully." << std::endl;
 }
 

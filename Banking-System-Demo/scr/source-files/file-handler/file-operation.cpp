@@ -27,10 +27,10 @@ std::vector <stClientData> LoadDataFromFileToVector()
 	return vClients;
 }
 
-void SaveDataToFile(std::vector <stClientData>& vClients, const std::string& FileName, const std::string& delimiter)
+void SaveDataToFile(std::vector <stClientData>& vClients)
 {
 	std::fstream file;
-	file.open(FileName, std::ios::out);
+	file.open(ClientsFileName, std::ios::out);
 	if (file.is_open())
 	{
 		std::string DataLine;
