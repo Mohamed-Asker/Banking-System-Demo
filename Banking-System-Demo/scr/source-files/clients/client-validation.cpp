@@ -9,7 +9,7 @@
 #include "../../header-files/file-handler/file-handler.h"
 
 
-bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber, stClientData* ptrClient = nullptr)
+bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber, stClientData* ptrClient)
 {
 	for (const stClientData& tempClient : vClients)
 	{
@@ -84,8 +84,10 @@ bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std
 		if (std::tolower(answer) == 'y')
 		{
 			MarkClientForDelete(vClients, accNumber);
-			SaveDataToFile(vClients,)
-
+			SaveDataToFile(vClients, ClientsFileName, delimiter);
+			vClients = LoadDataFromFileToVector();
+			std::cout << "\nClient deleted successfully.\n";
+			return true;
 		}
 		return false;
 	}

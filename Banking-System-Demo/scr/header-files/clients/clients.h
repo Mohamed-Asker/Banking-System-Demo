@@ -17,7 +17,7 @@ bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::
 
 stClientData ReadNewClient(std::vector <stClientData>& vClients);
 
-void ShowDeleteClientScreen(std::vector <stClientData>& vClients, const std::string& FileNam, const std::string& delimiter);
+void ShowDeleteClientScreen(std::vector <stClientData>& vClients);
 
 void PrintHeaderDeleteClientScreen();
 

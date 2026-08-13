@@ -6,12 +6,12 @@
 #include "../../header-files/core/core.h"
 
 
-std::vector <stClientData> LoadDataFromFileToVector(const std::string& FileName, const std::string& delimiter)
+std::vector <stClientData> LoadDataFromFileToVector()
 {
 	std::vector <stClientData> vClients;
 	std::fstream file;
 
-	file.open(FileName, std::ios::in);
+	file.open(ClientsFileName, std::ios::in);
 	if (file.is_open())
 	{
 		stClientData client;

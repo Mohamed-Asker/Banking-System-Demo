@@ -5,7 +5,7 @@
 
 std::vector <std::string> split(std::string line, const std::string& delimiter);
 
-std::vector <stClientData> LoadDataFromFileToVector(const std::string& FileName, const std::string& delimiter);
+std::vector <stClientData> LoadDataFromFileToVector();
 
 std::string ConvertClientRecordToDataLine(const stClientData& client, const std::string& delimiter);
 

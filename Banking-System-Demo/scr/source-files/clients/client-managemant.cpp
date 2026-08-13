@@ -9,7 +9,7 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 {
 	bool isRunning = true;
 	enMainMnueOptions option;
-	std::vector <stClientData> vClients = LoadDataFromFileToVector(FileName, delimiter);
+	std::vector <stClientData> vClients = LoadDataFromFileToVector();
 
 	do
 	{
@@ -30,7 +30,7 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 			break;
 
 		case enMainMnueOptions::DeleteClient:
-			ShowDeleteClientScreen(vClients, FileName, delimiter);
+			ShowDeleteClientScreen(vClients);
 			PressAnyKey(width);
 			break;
 

@@ -27,7 +27,7 @@ void ShowAddNewClientScreen(std::vector <stClientData>& vClients, const std::str
 	std::cout << "\n" << std::left << std::setw(width) << "" << "Client added successfully." << std::endl;
 }
 
-void ShowDeleteClientScreen(std::vector <stClientData>& vClients, const std::string& FileNam , const std::string& delimiter)
+void ShowDeleteClientScreen(std::vector <stClientData>& vClients)
 {
 	ResetScreen();
 	PrintHeaderDeleteClientScreen();
