@@ -43,8 +43,13 @@ void ManageClient()
 			ShowFindClientScreen(vClients);
 			PressAnyKey(width);
 			break;
-		}
 
+		case enMainMnueOptions::Exit:
+			ResetScreen();
+			PrintHeaderEndScreen();
+			isRunning = false;
+			break;
+		}
 	} while (isRunning);
 }
 

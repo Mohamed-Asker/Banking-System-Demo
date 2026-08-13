@@ -74,3 +74,11 @@ void PrintHeaderFindClientScreen()
 	printf("%*s", 87, "-----------------------------------------------------\n");
 	std::cout << std::left << std::setw(width) << "" << "Finding client:\n";
 }
+
+void PrintHeaderEndScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 73, "* * *  PROGRAM END  * * *\n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+}
