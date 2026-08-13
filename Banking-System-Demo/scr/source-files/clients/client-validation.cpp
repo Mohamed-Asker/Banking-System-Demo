@@ -2,8 +2,11 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <cctype>
+#include "../../header-files/clients/clients.h"
 #include "../../header-files/core/core.h"
 #include "../../header-files/helpers/helpers.h"
+#include "../../header-files/file-handler/file-handler.h"
 
 
 bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber, stClientData* ptrClient = nullptr)
@@ -54,13 +57,37 @@ stClientData ReadNewClient(std::vector <stClientData>& vClients)
 	return client;
 }
 
+bool MarkClientForDelete(std::vector <stClientData>& vClients, const std::string& accNumber)
+{
+	for (stClientData& tempClient : vClients)
+	{
+		if (tempClient.accNumber == accNumber)
+		{
+			tempClient.MarkForDelete = true;
+			return true;
+		}
+	}
+	return false;
+}
+
 bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber)
 {
 	stClientData client;
+	char answer;
 
 	if (FindClientByAccountNumber(vClients, accNumber, &client))
 	{
+		ShowClientDetails(client);
+		std::cout << "\nAre you sure do you want to delete this client[Y,N]: ";
+		std::cin >> answer;
 
+		if (std::tolower(answer) == 'y')
+		{
+			MarkClientForDelete(vClients, accNumber);
+			SaveDataToFile(vClients,)
+
+		}
+		return false;
 	}
 	else
 	{

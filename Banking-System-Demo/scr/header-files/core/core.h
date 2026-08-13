@@ -5,6 +5,7 @@ void PrintMainMnueScreen();
 
 const int width = 33;
 
+
 struct stClientData
 {
 	std::string accNumber = "";
