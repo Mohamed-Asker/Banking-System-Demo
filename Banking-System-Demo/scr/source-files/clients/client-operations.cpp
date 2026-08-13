@@ -20,5 +20,5 @@ void ShowAddNewClientScreen(std::vector <stClientData>& vClients)
 {
 	ResetScreen();
 	PrintHeaderAddNewClientScreen();
-
+	ReadNewClient(vClients);
 }

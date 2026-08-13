@@ -3,6 +3,7 @@
 #include <string>
 #include <iomanip>
 #include "../../header-files/core/core.h"
+#include "../../header-files/helpers/helpers.h"
 
 
 bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber, stClientData* ptrClient = nullptr)
@@ -26,6 +27,7 @@ bool isAccountNumberExists(std::vector <stClientData>& vClients, const std::stri
 {
 	if (FindClientByAccountNumber(vClients, accNumber))
 	{
+		std::cout << "\n";
 		std::cout << std::left << std::setw(33) << "" << "Client with account number [" << accNumber << "] already exists.\n";
 		std::cout << std::left << std::setw(33) << "" << "Enter another account number: ";
 		return true;
@@ -42,15 +44,13 @@ stClientData ReadNewClient(std::vector <stClientData>& vClients)
 	{
 		std::getline(std::cin, client.accNumber);
 	} while (isAccountNumberExists(vClients, client.accNumber));
-	
 	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Pin Code" << ": ";
 	std::getline(std::cin, client.PinCode);
-
 	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Full Name" << ": ";
 	std::getline(std::cin, client.name);
-
 	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Phone" << ": ";
 	std::getline(std::cin, client.phone);
+	client.accBalance = ReadPostiveNumber("Account Number", 33, 16);
 
-	
+	return client;
 }

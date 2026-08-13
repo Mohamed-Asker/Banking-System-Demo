@@ -26,7 +26,7 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 
 		case enMainMnueOptions::AddNewClient:
 			ShowAddNewClientScreen(vClients);
-			PressAnyKey();
+			PressAnyKey(33);
 			break;
 		}
 
