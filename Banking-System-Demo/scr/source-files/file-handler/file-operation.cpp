@@ -26,3 +26,22 @@ std::vector <stClientData> LoadDataFromFileToVector(const std::string& FileName,
 	}
 	return vClients;
 }
+
+void SaveDataToFile(std::vector <stClientData>& vClients, const std::string& FileName, const std::string& delimiter)
+{
+	std::fstream file;
+	file.open(FileName, std::ios::out);
+	if (file.is_open())
+	{
+		std::string DataLine;
+		for (const stClientData& tempClient : vClients)
+		{
+			if (tempClient.MarkForDelete == false)
+			{
+				DataLine = ConvertClientRecordToDataLine(tempClient, delimiter);
+				file << DataLine << std::endl;
+			}
+		}
+		file.close();
+	}
+}

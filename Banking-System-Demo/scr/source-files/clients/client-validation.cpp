@@ -22,7 +22,6 @@ bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::
 	return false;
 }
 
-
 bool isAccountNumberExists(std::vector <stClientData>& vClients, const std::string& accNumber)
 {
 	if (FindClientByAccountNumber(vClients, accNumber))
@@ -39,18 +38,18 @@ stClientData ReadNewClient(std::vector <stClientData>& vClients)
 {
 	stClientData client;
 
-	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Account Number" << ": ";
+	std::cout << std::left << std::setw(width) << "" << std::setw(16) << "Account Number" << ": ";
 	do
 	{
 		std::getline(std::cin, client.accNumber);
 	} while (isAccountNumberExists(vClients, client.accNumber));
-	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Pin Code" << ": ";
+	std::cout << std::left << std::setw(width) << "" << std::setw(16) << "Pin Code" << ": ";
 	std::getline(std::cin, client.PinCode);
-	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Full Name" << ": ";
+	std::cout << std::left << std::setw(width) << "" << std::setw(16) << "Full Name" << ": ";
 	std::getline(std::cin, client.name);
-	std::cout << std::left << std::setw(33) << "" << std::setw(16) << "Phone" << ": ";
+	std::cout << std::left << std::setw(width) << "" << std::setw(16) << "Phone" << ": ";
 	std::getline(std::cin, client.phone);
-	client.accBalance = ReadPostiveNumber("Account Number", 33, 16);
+	client.accBalance = ReadPositiveNumber("Account Number", width, 16);
 
 	return client;
 }

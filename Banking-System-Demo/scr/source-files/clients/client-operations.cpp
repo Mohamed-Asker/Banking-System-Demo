@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <iomanip>
 #include "../../header-files/clients/clients.h"
 #include "../../header-files/core/core.h"
 #include "../../header-files/helpers/helpers.h"
+#include "../../header-files/file-handler/file-handler.h"
 
 void ShowClientsListScreen(std::vector <stClientData>& vClients)
 {
@@ -13,12 +15,14 @@ void ShowClientsListScreen(std::vector <stClientData>& vClients)
 		PrintClientCard(client);
 		std::cout << std::endl;
 	}
-	std::cout << "\n------------------------------------------------------------------------------------------------------------------------\n";
+	std::cout << "------------------------------------------------------------------------------------------------------------------------\n";
 }
 
-void ShowAddNewClientScreen(std::vector <stClientData>& vClients)
+void ShowAddNewClientScreen(std::vector <stClientData>& vClients, const std::string& FileName, const std::string& delimiter)
 {
 	ResetScreen();
 	PrintHeaderAddNewClientScreen();
-	ReadNewClient(vClients);
+	vClients.push_back(ReadNewClient(vClients));
+	SaveDataToFile(vClients, FileName, delimiter);
+	std::cout << "\n" << std::left << std::setw(width) << "" << "Client added successfully." << std::endl;
 }

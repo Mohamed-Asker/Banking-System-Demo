@@ -41,3 +41,16 @@ stClientData ConvertClientDataLineToRecord(std::string& DataLine, const std::str
 
 	return client;
 }
+
+std::string ConvertClientRecordToDataLine(const stClientData& client,const std::string& delimiter)
+{
+	std::string DataLine = "";
+
+	DataLine += (client.accNumber + delimiter);
+	DataLine += (client.PinCode + delimiter);
+	DataLine += (client.name + delimiter);
+	DataLine += (client.phone + delimiter);
+	DataLine += std::to_string(client.accBalance);
+
+	return DataLine;
+}

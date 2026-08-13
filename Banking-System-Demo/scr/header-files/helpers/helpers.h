@@ -13,4 +13,4 @@ void PressAnyKey(int width = 0);
 
 std::string ReadAccountNumber();
 
-double ReadPostiveNumber(const std::string& msg, const int width = 0, const int msgWidth = 0);
+double ReadPositiveNumber(const std::string& msg, const int width = 0, const int msgWidth = 0);

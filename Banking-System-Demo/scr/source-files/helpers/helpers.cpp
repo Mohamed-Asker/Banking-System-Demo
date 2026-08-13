@@ -52,7 +52,7 @@ std::string ReadAccountNumber()
 	return accNumber;
 }
 
-double ReadPostiveNumber(const std::string& msg, const int width, const int msgWidth)
+double ReadPositiveNumber(const std::string& msg, const int width, const int msgWidth)
 {
 	double number;
 
@@ -68,7 +68,7 @@ double ReadPostiveNumber(const std::string& msg, const int width, const int msgW
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cout << "\n";
 			std::cout << std::left << std::setw(width) << "" << "Invalid input,\n";
-			std::cout << std::left << std::setw(width) << "" << msg << ": ";
+			std::cout << std::left << std::setw(width) << "" << std::setw(msgWidth) << msg << ": ";
 		}
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	} while (number <= 0);

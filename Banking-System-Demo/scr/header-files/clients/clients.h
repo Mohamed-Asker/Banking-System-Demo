@@ -11,7 +11,7 @@ void PrintClientCard(const stClientData& client);
 
 void ShowClientsListScreen(std::vector <stClientData>& vClients);
 
-void ShowAddNewClientScreen(std::vector <stClientData>& vClients);
+void ShowAddNewClientScreen(std::vector <stClientData>& vClients, const std::string& FileName, const std::string& delimiter);
 
 bool FindClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber, stClientData* ptrClient = nullptr);
 

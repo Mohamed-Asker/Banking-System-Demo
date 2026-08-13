@@ -15,7 +15,7 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 	{
 		ResetScreen();
 		PrintMainMnueScreen();
-		option = static_cast<enMainMnueOptions>(ReadNumberInRange("Choose what do you want to do", 1, 6, 33));
+		option = static_cast<enMainMnueOptions>(ReadNumberInRange("Choose what do you want to do", 1, 6, width));
 
 		switch (option)
 		{
@@ -25,7 +25,7 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 			break;
 
 		case enMainMnueOptions::AddNewClient:
-			ShowAddNewClientScreen(vClients);
+			ShowAddNewClientScreen(vClients, FileName, delimiter);
 			PressAnyKey(33);
 			break;
 		}
