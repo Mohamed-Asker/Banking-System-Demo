@@ -80,6 +80,7 @@ bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std
 		ShowClientDetails(client);
 		std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure do you want to delete this client[Y,N]: ";
 		std::cin >> answer;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 		if (std::tolower(answer) == 'y')
 		{
@@ -87,6 +88,56 @@ bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std
 			SaveDataToFile(vClients);
 			vClients = LoadDataFromFileToVector();
 			std::cout << "\n" << std::left << std::setw(width) << "" << "Client deleted successfully.\n";
+			return true;
+		}
+		return false;
+	}
+	else
+	{
+		std::cout << "\n" << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not found.\n";
+		return false;
+	}
+}
+
+stClientData ChangeClientRecord(const std::string& accNumber)
+{
+	stClientData client;
+
+	client.accNumber = accNumber;
+	std::cout << std::left << std::setw(width) << "" << std::setw(18) << "New Pin Code" << ": ";
+	std::getline(std::cin, client.PinCode);
+	std::cout << std::left << std::setw(width) << "" << std::setw(18) << "New Full Name" << ": ";
+	std::getline(std::cin, client.name);
+	std::cout << std::left << std::setw(width) << "" << std::setw(18) << "New Phone" << ": ";
+	std::getline(std::cin, client.phone);
+	client.accBalance = ReadPositiveNumber("New Account Number", width, 18);
+
+	return client;
+}
+
+bool UpdateClientByAccountNumber(std::vector <stClientData>& vClients,const std::string& accNumber)
+{
+	stClientData client;
+	char answer;
+	if (FindClientByAccountNumber(vClients, accNumber, &client))
+	{
+		ShowClientDetails(client);
+		std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure you want update this client[Y,N]: ";
+		std::cin >> answer;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+		if (std::tolower(answer) == 'y')
+		{
+			for (stClientData& tempClient : vClients)
+			{
+				if (tempClient.accNumber == accNumber)
+				{
+					tempClient = ChangeClientRecord(accNumber);
+					break;
+				}
+			}
+			SaveDataToFile(vClients);
+			std::cout << "\n" << std::left << std::setw(width) << "" << "Client updated successfully.\n";
 			return true;
 		}
 		return false;

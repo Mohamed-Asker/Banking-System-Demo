@@ -34,3 +34,11 @@ void ShowDeleteClientScreen(std::vector <stClientData>& vClients)
 	std::string accNumber = ReadAccountNumber();
 	DeleteClientByAccountNumber(vClients, accNumber);
 }
+
+void ShowUpdateClientScreen(std::vector <stClientData>& vClients)
+{
+	ResetScreen();
+	PrintHeaderUpdateClientScreen();
+	std::string accNumber = ReadAccountNumber();
+	UpdateClientByAccountNumber(vClients, accNumber);
+}

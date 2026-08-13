@@ -24,3 +24,9 @@ void PrintHeaderDeleteClientScreen();
 void ShowClientDetails(const stClientData& client);
 
 bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber);
+
+void PrintHeaderUpdateClientScreen();
+
+bool UpdateClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber);
+
+void ShowUpdateClientScreen(std::vector <stClientData>& vClients);

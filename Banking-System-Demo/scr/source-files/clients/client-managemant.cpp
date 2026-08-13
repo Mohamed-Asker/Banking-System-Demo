@@ -34,6 +34,11 @@ void ManageClient()
 			PressAnyKey(width);
 			break;
 
+		case enMainMnueOptions::UpdateClient:
+			ShowUpdateClientScreen(vClients);
+			PressAnyKey(width);
+			break;
+
 		}
 
 	} while (isRunning);

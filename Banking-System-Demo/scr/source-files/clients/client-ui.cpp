@@ -42,7 +42,7 @@ void PrintHeaderDeleteClientScreen()
 	printf("%*s", 87, "-----------------------------------------------------\n");
 	printf("%*s", 77, "* * *  DELETE CLIENT SCREEN  * * *\n");
 	printf("%*s", 87, "-----------------------------------------------------\n");
-	std::cout << std::left << std::setw(width) << "" << "Deleteing client:\n";
+	std::cout << std::left << std::setw(width) << "" << "Deleting client:\n";
 }
 
 void ShowClientDetails(const stClientData& client)
@@ -55,4 +55,13 @@ void ShowClientDetails(const stClientData& client)
 	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Client Phone" << ": " << client.phone;
 	std::cout << "\n" << std::left << std::setw(width) << "" << std::setw(16) << "Account Balance" << ": " << client.accBalance;
 	std::cout << "\n" << std::left << std::setw(width) << "" << "--------------------------------------";
+}
+
+void PrintHeaderUpdateClientScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 77, "* * *  UPDATE CLIENT SCREEN  * * *\n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	std::cout << std::left << std::setw(width) << "" << "Updating client:\n";
 }
