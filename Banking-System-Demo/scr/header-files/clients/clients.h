@@ -36,3 +36,5 @@ void PrintHeaderFindClientScreen();
 void ShowFindClientScreen(std::vector <stClientData>& vClients);
 
 void PrintHeaderEndScreen();
+
+void ManageClient();

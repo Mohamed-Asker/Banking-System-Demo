@@ -52,8 +52,3 @@ void ManageClient()
 		}
 	} while (isRunning);
 }
-
-int main()
-{
-	ManageClient();
-}
