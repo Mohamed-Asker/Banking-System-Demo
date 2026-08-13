@@ -78,7 +78,7 @@ bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std
 	if (FindClientByAccountNumber(vClients, accNumber, &client))
 	{
 		ShowClientDetails(client);
-		std::cout << "\nAre you sure do you want to delete this client[Y,N]: ";
+		std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure do you want to delete this client[Y,N]: ";
 		std::cin >> answer;
 
 		if (std::tolower(answer) == 'y')
@@ -86,7 +86,7 @@ bool DeleteClientByAccountNumber(std::vector <stClientData>& vClients, const std
 			MarkClientForDelete(vClients, accNumber);
 			SaveDataToFile(vClients);
 			vClients = LoadDataFromFileToVector();
-			std::cout << "\nClient deleted successfully.\n";
+			std::cout << "\n" << std::left << std::setw(width) << "" << "Client deleted successfully.\n";
 			return true;
 		}
 		return false;

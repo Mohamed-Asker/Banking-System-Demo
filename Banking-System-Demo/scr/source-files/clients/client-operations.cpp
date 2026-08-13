@@ -18,7 +18,7 @@ void ShowClientsListScreen(std::vector <stClientData>& vClients)
 	std::cout << "------------------------------------------------------------------------------------------------------------------------\n";
 }
 
-void ShowAddNewClientScreen(std::vector <stClientData>& vClients, const std::string& FileName, const std::string& delimiter)
+void ShowAddNewClientScreen(std::vector <stClientData>& vClients)
 {
 	ResetScreen();
 	PrintHeaderAddNewClientScreen();
@@ -33,6 +33,4 @@ void ShowDeleteClientScreen(std::vector <stClientData>& vClients)
 	PrintHeaderDeleteClientScreen();
 	std::string accNumber = ReadAccountNumber();
 	DeleteClientByAccountNumber(vClients, accNumber);
-
-
 }

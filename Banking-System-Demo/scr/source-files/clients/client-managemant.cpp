@@ -5,7 +5,7 @@
 #include "../../header-files/file-handler/file-handler.h"
 #include "../../header-files/helpers/helpers.h"
 
-void ManageClient(const std::string& FileName, const std::string& delimiter)
+void ManageClient()
 {
 	bool isRunning = true;
 	enMainMnueOptions option;
@@ -25,7 +25,7 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 			break;
 
 		case enMainMnueOptions::AddNewClient:
-			ShowAddNewClientScreen(vClients, FileName, delimiter);
+			ShowAddNewClientScreen(vClients);
 			PressAnyKey(width);
 			break;
 
@@ -41,5 +41,5 @@ void ManageClient(const std::string& FileName, const std::string& delimiter)
 
 int main()
 {
-	ManageClient("D:/My-items/work/Clinets.txt", "#//#");
+	ManageClient();
 }
