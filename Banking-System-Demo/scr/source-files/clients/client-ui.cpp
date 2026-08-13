@@ -65,3 +65,12 @@ void PrintHeaderUpdateClientScreen()
 	printf("%*s", 87, "-----------------------------------------------------\n");
 	std::cout << std::left << std::setw(width) << "" << "Updating client:\n";
 }
+
+void PrintHeaderFindClientScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 76, "* * *  FIND CLIENT SCREEN  * * *\n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	std::cout << std::left << std::setw(width) << "" << "Finding client:\n";
+}

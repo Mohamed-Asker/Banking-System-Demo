@@ -39,6 +39,10 @@ void ManageClient()
 			PressAnyKey(width);
 			break;
 
+		case enMainMnueOptions::FindClient:
+			ShowFindClientScreen(vClients);
+			PressAnyKey(width);
+			break;
 		}
 
 	} while (isRunning);

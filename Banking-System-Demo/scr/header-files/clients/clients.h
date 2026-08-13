@@ -30,3 +30,7 @@ void PrintHeaderUpdateClientScreen();
 bool UpdateClientByAccountNumber(std::vector <stClientData>& vClients, const std::string& accNumber);
 
 void ShowUpdateClientScreen(std::vector <stClientData>& vClients);
+
+void PrintHeaderFindClientScreen();
+
+void ShowFindClientScreen(std::vector <stClientData>& vClients);

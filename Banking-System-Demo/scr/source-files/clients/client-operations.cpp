@@ -42,3 +42,20 @@ void ShowUpdateClientScreen(std::vector <stClientData>& vClients)
 	std::string accNumber = ReadAccountNumber();
 	UpdateClientByAccountNumber(vClients, accNumber);
 }
+
+void ShowFindClientScreen(std::vector <stClientData>& vClients)
+{
+	ResetScreen();
+	PrintHeaderFindClientScreen();
+	std::string accNumber = ReadAccountNumber();
+	stClientData client;
+	if (FindClientByAccountNumber(vClients, accNumber, &client))
+	{
+		ShowClientDetails(client);
+		std::cout << "\n";
+	}
+	else
+	{
+		std::cout << "\n" << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not found.\n";
+	}
+}
