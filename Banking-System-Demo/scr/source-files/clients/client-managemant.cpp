@@ -15,7 +15,7 @@ void ManageClient()
 	{
 		ResetScreen();
 		PrintMainMnueScreen();
-		MnueChoice = static_cast<enMainMnueOptions>(ReadNumberInRange("Choose what do you want to do", 1, 7, width));
+		MnueChoice = static_cast<enMainMnueOptions>(ReadNumberInRange("Choose what do you want to do [1:7]", 1, 7, width));
 
 		switch (MnueChoice)
 		{
@@ -46,11 +46,17 @@ void ManageClient()
 
 		case enMainMnueOptions::Transactions:
 			enTransactions TransactionChoice;
+
 			do
 			{
 				ResetScreen();
 				PrintTransactionsMnue();
+				TransactionChoice = static_cast<enTransactions>(ReadNumberInRange("Choose what do you want to do [1:4]", 1, 4, width));
 
+				switch (TransactionChoice)
+				{
+
+				}
 			} while (1);
 			break;
 
@@ -61,4 +67,9 @@ void ManageClient()
 			break;
 		}
 	} while (isRunning);
+}
+
+int main()
+{
+	ManageClient();
 }

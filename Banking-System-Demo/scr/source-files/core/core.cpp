@@ -19,7 +19,7 @@ void PrintMainMnueScreen()
 	std::cout << std::left << std::setw(width) << "" << "[3] Delete Client.\n";
 	std::cout << std::left << std::setw(width) << "" << "[4] Update Client.\n";
 	std::cout << std::left << std::setw(width) << "" << "[5] Find Client.\n";
-	std::cout << std::left << std::setw(width) << "" << "[6] Transactions.";
+	std::cout << std::left << std::setw(width) << "" << "[6] Transactions.\n";
 	std::cout << std::left << std::setw(width) << "" << "[7] Exit.\n";
 	printf("%*s", 87, "-----------------------------------------------------\n");
 }
