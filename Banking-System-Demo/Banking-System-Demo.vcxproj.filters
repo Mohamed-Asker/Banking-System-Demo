@@ -46,6 +46,12 @@
     <Filter Include="Source Files\scr/\clients/">
       <UniqueIdentifier>{825150f6-0b78-4b3c-a9f5-3af549134478}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\scr/\transactions/">
+      <UniqueIdentifier>{022311df-b0a6-428a-9fb7-1bf0ae259f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scr/\transactions/">
+      <UniqueIdentifier>{2adb5e63-4d29-460d-a19f-88d2b770d6aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -83,6 +89,15 @@
     <ClCompile Include="scr\source-files\clients\client-ui.cpp">
       <Filter>Source Files\scr/\clients/</Filter>
     </ClCompile>
+    <ClCompile Include="scr\source-files\transactions\transactions-ui.cpp">
+      <Filter>Source Files\scr/\transactions/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\source-files\transactions\transactios-operation.cpp">
+      <Filter>Source Files\scr/\transactions/</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\source-files\transactions\transeaction-validation.cpp">
+      <Filter>Source Files\scr/\transactions/</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\header-files\core\core.h">
@@ -96,6 +111,9 @@
     </ClInclude>
     <ClInclude Include="scr\header-files\clients\clients.h">
       <Filter>Header Files\scr/\clients/</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\header-files\transactions\transeactions.h">
+      <Filter>Header Files\scr/\transactions/</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -148,6 +148,9 @@
     <ClCompile Include="scr\source-files\file-handler\data-conversion.cpp" />
     <ClCompile Include="scr\source-files\file-handler\file-operation.cpp" />
     <ClCompile Include="scr\source-files\helpers\helpers.cpp" />
+    <ClCompile Include="scr\source-files\transactions\transactions-ui.cpp" />
+    <ClCompile Include="scr\source-files\transactions\transactios-operation.cpp" />
+    <ClCompile Include="scr\source-files\transactions\transeaction-validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore" />
@@ -158,6 +161,7 @@
     <ClInclude Include="scr\header-files\core\core.h" />
     <ClInclude Include="scr\header-files\file-handler\file-handler.h" />
     <ClInclude Include="scr\header-files\helpers\helpers.h" />
+    <ClInclude Include="scr\header-files\transactions\transeactions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
