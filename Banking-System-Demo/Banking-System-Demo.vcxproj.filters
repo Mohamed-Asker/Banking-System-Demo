@@ -51,7 +51,7 @@
     <None Include="..\.gitignore">
       <Filter>Source Files\project/</Filter>
     </None>
-    <None Include="..\reamdme.md">
+    <None Include="..\README.md">
       <Filter>Source Files\project/</Filter>
     </None>
   </ItemGroup>
