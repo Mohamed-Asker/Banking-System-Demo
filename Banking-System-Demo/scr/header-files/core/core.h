@@ -26,8 +26,6 @@ enum enMainMnueOptions
 	Exit = 7
 };
 
-void PrintTransactionsMnue();
-
 void PrintMainMnueScreen();
 
 enum enTransactions

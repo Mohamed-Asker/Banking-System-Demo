@@ -4,6 +4,7 @@
 #include "../../header-files/core/core.h"
 #include "../../header-files/file-handler/file-handler.h"
 #include "../../header-files/helpers/helpers.h"
+#include "../../header-files/transactions/transeactions.h"
 
 void ManageClient()
 {
