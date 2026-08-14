@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 #include "../../header-files/transactions/transeactions.h"
 #include "../../header-files/core/core.h"
@@ -9,4 +8,5 @@ void ShowDepositScrren(std::vector <stClientData>& vClients)
 {
 	ResetScreen();
 	PrintHeaderDepositScreen();
+	Deposit(vClients);
 }
