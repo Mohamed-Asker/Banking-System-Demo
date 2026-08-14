@@ -4,8 +4,9 @@
 #include "../../header-files/core/core.h"
 #include "../../header-files/helpers/helpers.h"
 #include "../../header-files/clients/clients.h"
+#include "../../header-files/file-handler/file-handler.h"
 
-void Deposit(std::vector <stClientData>& vClients)
+void DepositTransaction(std::vector <stClientData>& vClients)
 {
 	std::string accNumber;
 	stClientData client;
@@ -17,6 +18,7 @@ void Deposit(std::vector <stClientData>& vClients)
 		if (FindClientByAccountNumber(vClients, accNumber, &client))
 		{
 			ShowClientDetails(client);
+			std::cout << "\n";
 			DepositAmount = ReadPositiveNumber("Enter deposit amount", width);
 			std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure you want perfrom this transaction[Y,N]: ";
 			std::cin >> answer;
@@ -29,18 +31,18 @@ void Deposit(std::vector <stClientData>& vClients)
 					if (tempClient.accNumber == accNumber)
 					{
 						tempClient.accBalance += DepositAmount;
-						std::cout << "Done successfully, new balance is [" << tempClient.accBalance << "]";
+						std::cout << std::left << std::setw(width) << "" << "Done successfully, new balance is [" << tempClient.accBalance << "]\n";
 						break;
 					}
 				}
+				SaveDataToFile(vClients);
 				break;
 			}
 			break;
 		}
 		else
 		{
-			std::cout << "\n" << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not found.";
-			std::cout << "\n" << std::left << std::setw(width) << "" << "Enter another account number: ";
+			std::cout << "\n" << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not found.\n";
 		}
 	}
 }

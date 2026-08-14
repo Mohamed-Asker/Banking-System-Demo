@@ -27,11 +27,3 @@ enum enMainMnueOptions
 };
 
 void PrintMainMnueScreen();
-
-enum enTransactions
-{
-	Deposit = 1,
-	Withdraw = 2,
-	TotalBalance = 3,
-	MainMnue = 4
-};

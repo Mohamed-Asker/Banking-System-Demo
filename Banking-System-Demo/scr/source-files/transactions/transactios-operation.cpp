@@ -4,9 +4,9 @@
 #include "../../header-files/core/core.h"
 #include "../../header-files/helpers/helpers.h"
 
-void ShowDepositScrren(std::vector <stClientData>& vClients)
+void ShowDepositScreen(std::vector <stClientData>& vClients)
 {
 	ResetScreen();
 	PrintHeaderDepositScreen();
-	Deposit(vClients);
+	DepositTransaction(vClients);
 }

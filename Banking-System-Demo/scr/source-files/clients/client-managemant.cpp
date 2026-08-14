@@ -56,6 +56,10 @@ void ManageClient()
 
 				switch (TransactionChoice)
 				{
+				case enTransactions::Deposit:
+					ShowDepositScreen(vClients);
+					PressAnyKey(width);
+					break;
 
 				}
 			} while (1);
