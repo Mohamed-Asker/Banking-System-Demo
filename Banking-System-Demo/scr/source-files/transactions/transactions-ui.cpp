@@ -19,3 +19,11 @@ void PrintTransactionsMnue()
 	std::cout << std::left << std::setw(width) << "" << "[4] Main Mnue.\n";
 	printf("%*s", 87, "-----------------------------------------------------\n");
 }
+
+void PrintHeaderDepositScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 75, "* * *  DEPOSIT SCREEN  * * * \n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+}

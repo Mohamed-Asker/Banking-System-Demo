@@ -1,4 +1,6 @@
 #pragma once
 #include <iostream>
 
-void PrintTransactionsMnue()
+void PrintTransactionsMnue();
+
+void PrintHeaderDepositScreen();
