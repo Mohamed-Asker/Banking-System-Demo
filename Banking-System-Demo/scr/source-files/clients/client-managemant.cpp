@@ -8,16 +8,16 @@
 void ManageClient()
 {
 	bool isRunning = true;
-	enMainMnueOptions option;
+	enMainMnueOptions MnueChoice;
 	std::vector <stClientData> vClients = LoadDataFromFileToVector();
 
 	do
 	{
 		ResetScreen();
 		PrintMainMnueScreen();
-		option = static_cast<enMainMnueOptions>(ReadNumberInRange("Choose what do you want to do", 1, 6, width));
+		MnueChoice = static_cast<enMainMnueOptions>(ReadNumberInRange("Choose what do you want to do", 1, 7, width));
 
-		switch (option)
+		switch (MnueChoice)
 		{
 		case enMainMnueOptions::ShowClientsList:
 			ShowClientsListScreen(vClients);
@@ -42,6 +42,16 @@ void ManageClient()
 		case enMainMnueOptions::FindClient:
 			ShowFindClientScreen(vClients);
 			PressAnyKey(width);
+			break;
+
+		case enMainMnueOptions::Transactions:
+			enTransactions TransactionChoice;
+			do
+			{
+				ResetScreen();
+				PrintTransactionsMnue();
+
+			} while (1);
 			break;
 
 		case enMainMnueOptions::Exit:

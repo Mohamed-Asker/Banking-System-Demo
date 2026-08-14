@@ -1,8 +1,6 @@
 #pragma once
 #include <iostream>
 
-void PrintMainMnueScreen();
-
 const int width = 33;
 const std::string ClientsFileName = "D:/MA-DevVault/Projects/Banking-System/Banking-System-Demo/docs/files/ClientsData.txt";
 const std::string delimiter = "#//#";
@@ -24,5 +22,18 @@ enum enMainMnueOptions
 	DeleteClient = 3,
 	UpdateClient = 4,
 	FindClient = 5,
-	Exit = 6
+	Transactions = 6,
+	Exit = 7
+};
+
+void PrintTransactionsMnue();
+
+void PrintMainMnueScreen();
+
+enum enTransactions
+{
+	Deposit = 1,
+	Withdraw = 2,
+	TotalBalance = 3,
+	MainMnue = 4
 };
