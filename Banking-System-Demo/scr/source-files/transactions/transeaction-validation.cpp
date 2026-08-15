@@ -15,38 +15,43 @@ void DepositTransaction(std::vector <stClientData>& vClients, const std::string&
 	{
 		ShowClientDetails(client);
 		std::cout << "\n";
-		if (deposit)
+		for (stClientData& tempClient : vClients)
 		{
-			amount = ReadPositiveNumber("Enter deposit amount", width);
-		}
-		else
-		{
-			amount = ReadPositiveNumber("Enter withdraw amount", width);
-		}
-			
-		std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure you want perfrom this transaction[Y,N]: ";
-		std::cin >> answer;
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-		if (std::tolower(answer) == 'y')
-		{
-			for (stClientData& tempClient : vClients)
+			if (tempClient.accNumber == accNumber)
 			{
-				if (tempClient.accNumber == accNumber)
+				if (deposit)
 				{
-					if (deposit)
+					amount = ReadPositiveNumber("Enter deposit amount", width);
+					std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure you want perfrom this transaction[Y,N]: ";
+					std::cin >> answer;
+					if (std::tolower(answer) == 'y')
 					{
 						tempClient.accBalance += amount;
 					}
-					else
+				}
+				else
+				{
+					do
+					{
+						amount = ReadPositiveNumber("Enter withdraw amount", width);
+						if (amount > tempClient.accBalance)
+						{
+							std::cout << std::left << std::setw(width) << "" << "Amount exceeds the balance.\n";
+							std::cout << std::left << std::setw(width) << "" << "You can withdraw up tp: " << tempClient.accBalance << "\n\n";
+						}
+					} while (amount > tempClient.accBalance);
+					std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure you want perfrom this transaction[Y,N]: ";
+					std::cin >> answer;
+					if (std::tolower(answer) == 'y')
 					{
 						tempClient.accBalance = std::abs(tempClient.accBalance * -1 + amount);
 					}
-					std::cout << std::left << std::setw(width) << "" << "Done successfully, new balance is [" << tempClient.accBalance << "]\n";
 				}
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << std::left << std::setw(width) << "" << "Done successfully, new balance is [" << tempClient.accBalance << "]\n";
 			}
-			SaveDataToFile(vClients);
 		}
+		SaveDataToFile(vClients);
 	}
 	else
 	{
