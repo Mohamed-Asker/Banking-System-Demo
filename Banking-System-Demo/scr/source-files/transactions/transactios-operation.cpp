@@ -14,7 +14,7 @@ void ShowDepositScreen(std::vector <stClientData>& vClients)
 	while (!FindClientByAccountNumber(vClients, accNumber))
 	{
 		std::cout << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not exist.\n";
-		std::cout << std::left << std::setw(width) << "" << "please enter another account number.\n\n";
+		std::cout << std::left << std::setw(width) << "" << "Please enter another account number.\n\n";
 		accNumber = ReadAccountNumber();
 	}
 	DepositTransaction(vClients, accNumber);
@@ -24,5 +24,12 @@ void ShowWithdrawScreen(std::vector <stClientData>& vClients)
 {
 	ResetScreen();
 	PrintHeaderWithdrawScreen();
-	
+	std::string accNumber = ReadAccountNumber();
+	while (!FindClientByAccountNumber(vClients, accNumber))
+	{
+		std::cout << std::left << std::setw(width) << "" << "Client with account number [" << accNumber << "] not exist.\n";
+		std::cout << std::left << std::setw(width) << "" << "Please enter another account number.\n\n";
+		accNumber = ReadAccountNumber();
+	}
+	DepositTransaction(vClients, accNumber, false);
 }

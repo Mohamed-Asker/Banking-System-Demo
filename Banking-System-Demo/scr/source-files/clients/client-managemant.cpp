@@ -61,6 +61,11 @@ void ManageClient()
 					PressAnyKey(width);
 					break;
 
+				case enTransactions::Withdraw:
+					ShowWithdrawScreen(vClients);
+					PressAnyKey(width);
+					break;
+
 				}
 			} while (1);
 			break;

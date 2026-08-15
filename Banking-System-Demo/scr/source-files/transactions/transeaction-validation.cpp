@@ -43,7 +43,6 @@ void DepositTransaction(std::vector <stClientData>& vClients, const std::string&
 						tempClient.accBalance = std::abs(tempClient.accBalance * -1 + amount);
 					}
 					std::cout << std::left << std::setw(width) << "" << "Done successfully, new balance is [" << tempClient.accBalance << "]\n";
-					break;
 				}
 			}
 			SaveDataToFile(vClients);
