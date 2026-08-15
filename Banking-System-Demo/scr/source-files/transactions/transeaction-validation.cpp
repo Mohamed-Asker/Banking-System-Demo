@@ -6,16 +6,24 @@
 #include "../../header-files/clients/clients.h"
 #include "../../header-files/file-handler/file-handler.h"
 
-void DepositTransaction(std::vector <stClientData>& vClients, const std::string& accNumber)
+void DepositTransaction(std::vector <stClientData>& vClients, const std::string& accNumber, bool deposit)
 {
 	stClientData client;
-	double DepositAmount;
+	double amount;
 	char answer;
 	if (FindClientByAccountNumber(vClients, accNumber, &client))
 	{
 		ShowClientDetails(client);
 		std::cout << "\n";
-		DepositAmount = ReadPositiveNumber("Enter deposit amount", width);
+		if (deposit)
+		{
+			amount = ReadPositiveNumber("Enter deposit amount", width);
+		}
+		else
+		{
+			amount = ReadPositiveNumber("Enter withdraw amount", width);
+		}
+			
 		std::cout << "\n" << std::left << std::setw(width) << "" << "Are you sure you want perfrom this transaction[Y,N]: ";
 		std::cin >> answer;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -26,7 +34,14 @@ void DepositTransaction(std::vector <stClientData>& vClients, const std::string&
 			{
 				if (tempClient.accNumber == accNumber)
 				{
-					tempClient.accBalance += DepositAmount;
+					if (deposit)
+					{
+						tempClient.accBalance += amount;
+					}
+					else
+					{
+						tempClient.accBalance = std::abs(tempClient.accBalance * -1 + amount);
+					}
 					std::cout << std::left << std::setw(width) << "" << "Done successfully, new balance is [" << tempClient.accBalance << "]\n";
 					break;
 				}
