@@ -18,3 +18,7 @@ void PrintHeaderDepositScreen();
 void DepositTransaction(std::vector <stClientData>& vClients);
 
 void ShowDepositScreen(std::vector <stClientData>& vClients);
+
+void ShowWithdrawScreen(std::vector <stClientData>& vClients);
+
+void PrintHeaderWithdrawScreen();

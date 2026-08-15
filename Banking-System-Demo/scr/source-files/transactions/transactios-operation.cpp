@@ -10,3 +10,10 @@ void ShowDepositScreen(std::vector <stClientData>& vClients)
 	PrintHeaderDepositScreen();
 	DepositTransaction(vClients);
 }
+
+void ShowWithdrawScreen(std::vector <stClientData>& vClients)
+{
+	ResetScreen();
+	PrintHeaderWithdrawScreen();
+	
+}
