@@ -1,6 +1,8 @@
 #include <iostream>
 #include <iomanip>
+#include <vector>
 #include "../../header-files/core/core.h"
+#include "../../header-files/helpers/helpers.h"
 
 void PrintHeaderTransactionsMnue()
 {
@@ -34,4 +36,38 @@ void PrintHeaderWithdrawScreen()
 	printf("%*s", 87, "-----------------------------------------------------\n");
 	printf("%*s", 76, "* * *  WITHDRAW SCREEN  * * * \n");
 	printf("%*s", 87, "-----------------------------------------------------\n");
+}
+
+void PrintHeaderBalanceList(std::size_t NumberOfClients)
+{
+	std::cout << "\n\n";
+	std::cout << std::left << std::setw(width + 15) << "" << "Balance list (" << NumberOfClients << GetWordForm(NumberOfClients);
+	std::cout << "\n------------------------------------------------------------------------------------------------------------------------\n";
+	std::cout << "|" << std::left << std::setw(30) << "Account Number";
+	std::cout << "|" << std::left << std::setw(56) << "Client Name";
+	std::cout << "|" << std::left << std::setw(30) << "Balance" << "|";
+	std::cout << "\n------------------------------------------------------------------------------------------------------------------------\n";
+	
+}
+
+void PrintClientBalance(const stClientData& client)
+{
+	std::cout << "|" << std::left << std::setw(30) << client.accNumber;
+	std::cout << "|" << std::left << std::setw(56) << client.name;
+	std::cout << "|" << std::left << std::setw(30) << client.accBalance << "|";
+}
+
+void ShowBalanceList(std::vector <stClientData>& vClients)
+{
+	ResetScreen();
+	PrintHeaderBalanceList(vClients.size());
+	double TotalBalance = 0;
+	for (const stClientData& tempClient : vClients)
+	{
+		PrintClientBalance(tempClient);
+		TotalBalance += tempClient.accBalance;
+		std::cout << std::endl;
+	}
+	std::cout << "------------------------------------------------------------------------------------------------------------------------\n";
+	std::cout << "Total Balance = " << TotalBalance << "\n";
 }

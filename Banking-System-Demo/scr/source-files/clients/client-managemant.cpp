@@ -66,6 +66,11 @@ void ManageClient()
 					PressAnyKey(width);
 					break;
 
+				case enTransactions::TotalBalance:
+					ShowBalanceList(vClients);
+					PressAnyKey();
+					break;
+
 				}
 			} while (1);
 			break;

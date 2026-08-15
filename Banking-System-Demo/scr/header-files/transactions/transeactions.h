@@ -22,3 +22,5 @@ void ShowDepositScreen(std::vector <stClientData>& vClients);
 void ShowWithdrawScreen(std::vector <stClientData>& vClients);
 
 void PrintHeaderWithdrawScreen();
+
+void ShowBalanceList(std::vector <stClientData>& vClients);
