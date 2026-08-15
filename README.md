@@ -1,26 +1,14 @@
 # 🏦 Banking System
 
-A modular **Banking System** application built with **C++**, designed to manage client data through a clean and organized architecture.
+A modular **Banking System** application built with **C++**, designed to manage clients and perform basic banking transactions through a clean and organized architecture.
 
-The project focuses on applying practical C++ programming concepts such as **Structures, Enums, Vectors, File Handling, Data Conversion, Input Validation, and Modular Programming**.
-
----
-
-## 📌 Project Overview
-
-The Banking System provides a simple interface for managing bank clients and their account information.
-
-The application stores client data in a text file and loads the data into memory using `std::vector`, allowing the program to perform different operations efficiently.
-
-The project is organized into independent modules to keep responsibilities separated and make the code easier to maintain, understand, and extend.
+The project focuses on practical C++ concepts such as **Structures, Enums, Vectors, File Handling, Data Conversion, Input Validation, and Modular Programming**.
 
 ---
 
-## ✨ Features
+## 📌 Features
 
 ### 👥 Client Management
-
-The system currently supports:
 
 * 📋 Show all clients
 * ➕ Add a new client
@@ -28,268 +16,55 @@ The system currently supports:
 * ✏️ Update client information
 * 🔎 Find a client by account number
 * 📄 Show detailed client information
-* 🚪 Exit the application
 
-### 💾 File Management
+### 💰 Transactions
 
-Client data is stored in a text file and can be:
+The system supports basic banking transactions through a dedicated **Transaction Main Menu**:
 
-* Loaded from the file into a `std::vector`
-* Converted from text lines into client records
-* Converted from client records into text lines
-* Saved back to the file
-
-### ✅ Input Validation
-
-The project also includes reusable helper functions for:
-
-* Validating numbers within a specific range
-* Reading positive numbers
-* Reading account numbers
-* Handling menu selections
-* Formatting screen output
-* Waiting for user input before continuing
+* 💵 Deposit
+* 💸 Withdraw
+* 💰 Show Total Balances
+* ↩️ Return to Main Menu
 
 ---
 
 ## 🏗️ Project Architecture
 
-The project follows a modular structure where each module has a specific responsibility.
+The project is divided into independent modules to keep responsibilities separated and make the code easier to maintain and extend.
 
 ```text
 Banking-System/
 │
-├── docs/
-│   └── files/
-│       └── ClientsData.txt
-│
 ├── Header Files/
 │   └── src/
 │       ├── clients/
-│       │   └── clients.h
-│       │
 │       ├── core/
-│       │   └── core.h
-│       │
 │       ├── file-handler/
-│       │   └── file-handler.h
-│       │
-│       └── helpers/
-│           └── helpers.h
+│       ├── helpers/
+│       └── transactions/
 │
 ├── Source Files/
 │   ├── src/
 │   │   ├── clients/
-│   │   │   ├── client-management.cpp
-│   │   │   ├── client-operations.cpp
-│   │   │   ├── client-ui.cpp
-│   │   │   └── client-validation.cpp
-│   │   │
 │   │   ├── core/
-│   │   │   └── core.cpp
-│   │   │
 │   │   ├── file-handler/
-│   │   │   ├── data-conversion.cpp
-│   │   │   └── file-operation.cpp
-│   │   │
-│   │   └── helpers/
-│   │       └── helpers.cpp
+│   │   ├── helpers/
+│   │   └── transactions/
 │   │
 │   └── main.cpp
+│
+├── docs/
+│   └── files/
+│       └── ClientsData.txt
 │
 └── README.md
 ```
 
 ---
 
-## 🧩 Modules
-
-### 👥 Clients Module
-
-**Location:**
-
-```text
-src/clients/
-```
-
-Responsible for all client-related operations.
-
-Main responsibilities include:
-
-* Displaying clients
-* Adding clients
-* Finding clients
-* Updating clients
-* Deleting clients
-* Displaying client details
-* Reading new client information
-* Managing the client management screen
-
-Main functions include:
-
-```cpp
-ShowClientsListScreen()
-ShowAddNewClientScreen()
-FindClientByAccountNumber()
-ReadNewClient()
-ShowDeleteClientScreen()
-DeleteClientByAccountNumber()
-UpdateClientByAccountNumber()
-ShowUpdateClientScreen()
-ShowFindClientScreen()
-ManageClient()
-```
-
-The module is further divided into multiple source files:
-
-```text
-client-management.cpp
-client-operations.cpp
-client-ui.cpp
-client-validation.cpp
-```
-
-This separation helps keep the client functionality organized instead of placing everything in one large source file.
-
----
-
-### ⚙️ Core Module
-
-**Location:**
-
-```text
-src/core/
-```
-
-The Core module contains the fundamental definitions shared across the project.
-
-It includes the main client data structure:
-
-```cpp
-struct stClientData
-{
-    std::string accNumber = "";
-    std::string PinCode = "";
-    std::string name = "";
-    std::string phone = "";
-    double accBalance = 0;
-    bool MarkForDelete = false;
-};
-```
-
-It also contains the main menu options:
-
-```cpp
-enum enMainMnueOptions
-{
-    ShowClientsList = 1,
-    AddNewClient = 2,
-    DeleteClient = 3,
-    UpdateClient = 4,
-    FindClient = 5,
-    Exit = 6
-};
-```
-
-The Core module acts as a foundation for other modules that depend on the project's main data definitions.
-
----
-
-### 📁 File Handler Module
-
-**Location:**
-
-```text
-src/file-handler/
-```
-
-Responsible for communication between the application and the data file.
-
-It handles both **File I/O** and **Data Conversion**.
-
-#### Data Conversion
-
-The module provides functions such as:
-
-```cpp
-split()
-ConvertClientRecordToDataLine()
-ConvertClientDataLineToRecord()
-```
-
-These functions convert data between:
-
-```text
-Client Record ↔ Text Line
-```
-
-#### File Operations
-
-The module also provides:
-
-```cpp
-LoadDataFromFileToVector()
-SaveDataToFile()
-```
-
-The general data flow is:
-
-```text
-ClientsData.txt
-      │
-      ▼
-LoadDataFromFileToVector()
-      │
-      ▼
-std::vector<stClientData>
-      │
-      ▼
-Client Operations
-      │
-      ▼
-SaveDataToFile()
-      │
-      ▼
-ClientsData.txt
-```
-
----
-
-### 🛠️ Helpers Module
-
-**Location:**
-
-```text
-src/helpers/
-```
-
-Contains reusable utility functions used throughout the application.
-
-Examples include:
-
-```cpp
-isNumberInRange()
-ReadNumberInRange()
-ResetScreen()
-GetWordForm()
-PressAnyKey()
-ReadAccountNumber()
-ReadPositiveNumber()
-```
-
-The purpose of this module is to avoid repeating common functionality across different parts of the project.
-
----
-
 ## 💾 Data Storage
 
-Client information is stored in:
-
-```text
-ClientsData.txt
-```
-
-Each client is represented by one line.
+Client data is stored in `ClientsData.txt` and loaded into a `std::vector` for processing.
 
 The project uses:
 
@@ -297,181 +72,70 @@ The project uses:
 #//#
 ```
 
-as the delimiter between fields.
+as the delimiter between client fields.
 
-### Example
+Example:
 
 ```text
 A1001#//#1234#//#Mohamed Ibrahim Askar#//#01000000000#//#50000
 ```
 
-The data represents:
-
-| Field        | Description           |
-| ------------ | --------------------- |
-| `accNumber`  | Client account number |
-| `PinCode`    | Account PIN           |
-| `name`       | Client full name      |
-| `phone`      | Client phone number   |
-| `accBalance` | Account balance       |
-
 ---
 
-## 🔄 Data Conversion
+## 🧩 Main Modules
 
-The project separates the stored text representation from the application's internal representation.
+### Clients
 
-### Text → Record
+Handles client management operations such as adding, deleting, updating, searching, and displaying clients.
+
+### Transactions
+
+Handles banking operations including:
 
 ```text
-"A1001#//#1234#//#Mohamed Ibrahim Askar#//#01000000000#//#50000"
-                              │
-                              ▼
-                    stClientData
+Deposit
+Withdraw
+Total Balances
+Transaction Main Menu
 ```
 
-### Record → Text
+### File Handler
 
-```text
-stClientData
-     │
-     ▼
-ConvertClientRecordToDataLine()
-     │
-     ▼
-"A1001#//#1234#//#Mohamed Ibrahim Askar#//#01000000000#//#50000"
-```
+Responsible for loading and saving client data and converting between text and client records.
 
-This makes the file-handling logic independent from the client-management logic.
+### Helpers
+
+Contains reusable functions for input validation, account number reading, screen handling, and other common operations.
+
+### Core
+
+Contains shared data structures, enums, and core definitions used throughout the project.
 
 ---
 
-## 🧠 Main Menu
+## 🧠 Programming Concepts
 
-The application provides the following main operations:
-
-```text
-[1] Show Clients List
-[2] Add New Client
-[3] Delete Client
-[4] Update Client
-[5] Find Client
-[6] Exit
-```
-
-The menu is represented internally using the `enMainMnueOptions` enum.
-
----
-
-## 🛡️ Input Validation
-
-The project includes reusable validation functions to make user input safer and more consistent.
-
-For example:
-
-```cpp
-ReadNumberInRange()
-```
-
-is used to ensure that a number falls within a specified range.
-
-Other helpers handle:
-
-* Positive numbers
-* Account numbers
-* Menu choices
-* Screen interaction
-
----
-
-## 🧱 Programming Concepts Used
-
-This project applies several important C++ concepts:
+The project applies:
 
 * C++ Functions
-* Structures (`struct`)
-* Enumerations (`enum`)
-* `std::vector`
-* `std::string`
-* References
-* Pointers
-* Default Parameters
+* Structures and Enumerations
+* `std::vector` and `std::string`
+* References and Pointers
 * File I/O
-* Data Parsing
-* String Splitting
+* Data Parsing and Conversion
 * Input Validation
 * Modular Programming
 * Separation of Responsibilities
-* Header / Source File Organization
-
----
-
-## 🗂️ Design Approach
-
-The project follows a **Separation of Concerns** approach.
-
-Each module has a specific responsibility:
-
-```text
-┌──────────────────────┐
-│      Main Program    │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│   Client Management  │
-└───────┬───────┬──────┘
-        │       │
-        ▼       ▼
-┌───────────┐ ┌──────────────┐
-│  Helpers  │ │ File Handler │
-└───────────┘ └───────┬──────┘
-                     │
-                     ▼
-              ┌──────────────┐
-              │ ClientsData  │
-              │     .txt     │
-              └──────────────┘
-
-             Core
-               │
-               ▼
-        Shared Data & Logic
-```
-
-This architecture makes the project easier to:
-
-* Understand
-* Debug
-* Maintain
-* Extend
-* Reuse
-
----
-
-## 🚀 Future Improvements
-
-Possible future enhancements include:
-
-* 💰 Deposit and withdrawal operations
-* 💸 Transactions history
-* 🔐 Login and authentication system
-* 👤 User permissions
-* 📊 Transaction reports
-* 🔎 Advanced client search
-* 💾 Improved data storage
-* 🧪 Automated testing
-* 🖥️ Improved user interface
 
 ---
 
 ## 📌 Project Status
 
-**Version:** `1.0`
+**Version:** `1.1`
 
-**Status:** `Completed — Basic Client Management Features`
+**Status:** `In Progress`
 
-The current version provides the fundamental client-management functionality and a modular foundation that can be extended with additional banking features.
+The project currently includes **Client Management** and **Basic Banking Transactions**, with more banking features planned for future development.
 
 ---
 
