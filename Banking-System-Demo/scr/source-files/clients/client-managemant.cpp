@@ -46,8 +46,9 @@ void ManageClient()
 			break;
 
 		case enMainMnueOptions::Transactions:
+		{
 			enTransactions TransactionChoice;
-
+			bool GoToMainMnue = false;
 			do
 			{
 				ResetScreen();
@@ -71,9 +72,13 @@ void ManageClient()
 					PressAnyKey();
 					break;
 
+				case enTransactions::MainMnue:
+					GoToMainMnue = true;
+					break;
 				}
-			} while (1);
+			} while (!GoToMainMnue);
 			break;
+		}
 
 		case enMainMnueOptions::Exit:
 			ResetScreen();
