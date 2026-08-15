@@ -27,3 +27,11 @@ void PrintHeaderDepositScreen()
 	printf("%*s", 75, "* * *  DEPOSIT SCREEN  * * * \n");
 	printf("%*s", 87, "-----------------------------------------------------\n");
 }
+
+void PrintHeaderWithdrawScreen()
+{
+	std::cout << "\n\n";
+	printf("%*s", 87, "-----------------------------------------------------\n");
+	printf("%*s", 76, "* * *  WITHDRAW SCREEN  * * * \n");
+	printf("%*s", 87, "-----------------------------------------------------\n");
+}
