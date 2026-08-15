@@ -1,8 +1,8 @@
 #include "scr/header-files/clients/clients.h"
 
-//int main()
-//{
-//	ManageClient();
-//
-//	return 0;
-//}
+int main()
+{
+	ManageClient();
+
+	return 0;
+}
