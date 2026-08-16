@@ -38,7 +38,7 @@ std::string GetWordForm(const std::size_t& number)
 	return (number <= 1) ? ") client" : ") clients";
 }
 
-void PressAnyKey(int width)
+void PressAnyKeyToGoBackMainMnue(int width)
 {
 	std::cout << std::left << std::setw(width) << "" << "Press any key to go back to main mnue...";
 	system("pause > 0");
@@ -74,4 +74,10 @@ double ReadPositiveNumber(const std::string& msg, const int width, const int msg
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	} while (number <= 0);
 	return number;
+}
+
+void PressAnyKeyToGoTransactionsMnue(int width)
+{
+	std::cout << std::left << std::setw(width) << "" << "Press any key to go back to transactions mnue: ";
+	system("pause > 0");
 }

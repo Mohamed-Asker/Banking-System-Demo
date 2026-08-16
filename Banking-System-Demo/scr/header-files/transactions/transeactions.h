@@ -15,7 +15,7 @@ void PrintTransactionsMnue();
 
 void PrintHeaderDepositScreen();
 
-void DepositTransaction(std::vector <stClientData>& vClients, const std::string& accNumber, bool deposit = true);
+bool DepositTransaction(std::vector <stClientData>& vClients, const std::string& accNumber, double amount);
 
 void ShowDepositScreen(std::vector <stClientData>& vClients);
 

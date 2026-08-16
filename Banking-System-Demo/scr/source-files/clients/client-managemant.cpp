@@ -22,27 +22,27 @@ void ManageClient()
 		{
 		case enMainMnueOptions::ShowClientsList:
 			ShowClientsListScreen(vClients);
-			PressAnyKey();
+			PressAnyKeyToGoBackMainMnue();
 			break;
 
 		case enMainMnueOptions::AddNewClient:
 			ShowAddNewClientScreen(vClients);
-			PressAnyKey(width);
+			PressAnyKeyToGoBackMainMnue(width);
 			break;
 
 		case enMainMnueOptions::DeleteClient:
 			ShowDeleteClientScreen(vClients);
-			PressAnyKey(width);
+			PressAnyKeyToGoBackMainMnue(width);
 			break;
 
 		case enMainMnueOptions::UpdateClient:
 			ShowUpdateClientScreen(vClients);
-			PressAnyKey(width);
+			PressAnyKeyToGoBackMainMnue(width);
 			break;
 
 		case enMainMnueOptions::FindClient:
 			ShowFindClientScreen(vClients);
-			PressAnyKey(width);
+			PressAnyKeyToGoBackMainMnue(width);
 			break;
 
 		case enMainMnueOptions::Transactions:
@@ -59,17 +59,17 @@ void ManageClient()
 				{
 				case enTransactions::Deposit:
 					ShowDepositScreen(vClients);
-					PressAnyKey(width);
+					PressAnyKeyToGoBackMainMnue(width);
 					break;
 
 				case enTransactions::Withdraw:
 					ShowWithdrawScreen(vClients);
-					PressAnyKey(width);
+					PressAnyKeyToGoBackMainMnue(width);
 					break;
 
 				case enTransactions::TotalBalance:
 					ShowBalanceList(vClients);
-					PressAnyKey();
+					PressAnyKeyToGoBackMainMnue();
 					break;
 
 				case enTransactions::MainMnue:

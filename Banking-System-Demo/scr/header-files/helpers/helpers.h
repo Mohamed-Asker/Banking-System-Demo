@@ -9,8 +9,10 @@ void ResetScreen();
 
 std::string GetWordForm(const std::size_t& number);
 
-void PressAnyKey(int width = 0);
+void PressAnyKeyToGoBackMainMnue(int width = 0);
 
 std::string ReadAccountNumber();
 
 double ReadPositiveNumber(const std::string& msg, const int width = 0, const int msgWidth = 0);
+
+void PressAnyKeyToGoTransactionsMnue(int width = 0);
