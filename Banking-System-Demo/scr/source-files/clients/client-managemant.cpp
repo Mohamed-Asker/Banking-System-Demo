@@ -6,6 +6,40 @@
 #include "../../header-files/helpers/helpers.h"
 #include "../../header-files/transactions/transeactions.h"
 
+void HandelTransactions(std::vector <stClientData>& vClients)
+{
+	enTransactions TransactionChoice;
+	bool GoToMainMnue = false;
+	do
+	{
+		ResetScreen();
+		PrintTransactionsMnue();
+		TransactionChoice = static_cast<enTransactions>(ReadNumberInRange("Choose what do you want to do [1:4]", 1, 4, width));
+
+		switch (TransactionChoice)
+		{
+		case enTransactions::Deposit:
+			ShowDepositScreen(vClients);
+			PressAnyKeyToGoTransactionsMnue(width);
+			break;
+
+		case enTransactions::Withdraw:
+			ShowWithdrawScreen(vClients);
+			PressAnyKeyToGoTransactionsMnue(width);
+			break;
+
+		case enTransactions::TotalBalance:
+			ShowBalanceList(vClients);
+			PressAnyKeyToGoTransactionsMnue();
+			break;
+
+		case enTransactions::MainMnue:
+			GoToMainMnue = true;
+			break;
+		}
+	} while (!GoToMainMnue);
+}
+
 void ManageClient()
 {
 	bool isRunning = true;
@@ -46,39 +80,8 @@ void ManageClient()
 			break;
 
 		case enMainMnueOptions::Transactions:
-		{
-			enTransactions TransactionChoice;
-			bool GoToMainMnue = false;
-			do
-			{
-				ResetScreen();
-				PrintTransactionsMnue();
-				TransactionChoice = static_cast<enTransactions>(ReadNumberInRange("Choose what do you want to do [1:4]", 1, 4, width));
-
-				switch (TransactionChoice)
-				{
-				case enTransactions::Deposit:
-					ShowDepositScreen(vClients);
-					PressAnyKeyToGoBackMainMnue(width);
-					break;
-
-				case enTransactions::Withdraw:
-					ShowWithdrawScreen(vClients);
-					PressAnyKeyToGoBackMainMnue(width);
-					break;
-
-				case enTransactions::TotalBalance:
-					ShowBalanceList(vClients);
-					PressAnyKeyToGoBackMainMnue();
-					break;
-
-				case enTransactions::MainMnue:
-					GoToMainMnue = true;
-					break;
-				}
-			} while (!GoToMainMnue);
+			HandelTransactions(vClients);
 			break;
-		}
 
 		case enMainMnueOptions::Exit:
 			ResetScreen();
